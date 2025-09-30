@@ -8,7 +8,40 @@ posting:
   days: [Mon, Tue, Wed, Thu, Fri]
 ai:
   provider: 'openrouter'
-  model: 'deepseek/deepseek-chat-v3.1:free'
+  # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  # ↓から無料のAPIを探す
+  # https://openrouter.ai/models?max_price=0
+  # ーーーーーーーーーーーーーーーーーーーーーー
+
+  # ↓早いし、内容も問題なさそう
+  # 2025/06/25 なぜか認証エラーで使えなくなった
+  # const MODEL = 'meta-llama/llama-4-maverick:free';
+
+  # ↓少し遅いがまあまあ文章作成能力も高そう
+  # const MODEL = 'deepseek/deepseek-chat-v3-0324:free';
+
+  # ↓記事は作れるが、ちょっとクオリティが低いかも（ランキング2位までしか作れない）
+  # export const MODEL = 'x-ai/grok-4-fast:free'
+
+  # ↓記事のクオリティが良く、使える
+  # const MODEL = 'deepseek/deepseek-chat-v3.1:free'
+
+  # ----すべて同じmodelを指定する場合→model-------------------------------------
+  # const MODEL = 'google/gemini-pro'; // 必要に応じて変更
+  # const MODEL = 'google/gemini-2.5-pro-exp-03-25';
+
+  # const MODEL = 'google/gemini-2.0-flash-exp:free';
+
+  model: 'x-ai/grok-4-fast:free'
+
+  # ----記事作成・リライト・タグ生成それぞれで別のmodelを指定する場合→models-----
+  # 新しい個別モデル指定
+  models:
+    article: 'x-ai/grok-4-fast:free'    # 記事作成用
+    rewrite: 'x-ai/grok-4-fast:free'       # リライト用
+    tags: 'x-ai/grok-4-fast:free'          # タグ生成用
+  # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   temperature: 0.7
   max_tokens: 1200
 note:
