@@ -428,8 +428,9 @@ import { runWithCore } from '@aa-0921/note-auto-core';
       affiliateLinks,
       magazinePromotion,
       amazonAssociateText,
-      // Kindleアフィリエイト設定
+      // Audible・Kindleアフィリエイト設定
       affiliateTag,
+      audibleAffiliateEnabled: true,
       kindleAffiliateEnabled,
     });
     console.log('記事の自動生成と下書き保存が完了しました');
