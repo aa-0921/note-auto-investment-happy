@@ -65,6 +65,7 @@ ai:
   # model: 'openai/gpt-oss-20b:free'
   # ↓429に引っかかりにくいかも？
   # 2025/10/12 記事のクオリティまあまあ
+  # 文字が途中で切れるが、クオリティは良さそう→出力tokenを増やすとうまくいった
   model: 'z-ai/glm-4.5-air:free'
   # model: 'deepseek/deepseek-chat-v3-0324:free'
   # model: 'moonshotai/kimi-k2:free'
@@ -72,16 +73,21 @@ ai:
   # model: 'google/gemma-3n-e2b-it:free'
   # model: 'qwen/qwen3-coder:free'
   # model: 'tencent/hunyuan-a13b-instruct:free'
+  # これはだめ、プロンプトの内容を復唱してしまう
   # model: 'tngtech/deepseek-r1t2-chimera:free'
+  # これはだめ、プロンプトの内容を復唱してしまう
+  # model: 'tngtech/deepseek-r1t-chimera:free'
   # model: 'meta-llama/llama-4-maverick:free'
+
+  # model: 'meituan/longcat-flash-chat:free'
 
 
   # ----記事作成・リライト・タグ生成それぞれで別のmodelを指定する場合↓models（これを指定する場合はmodel は不要）-----
   # 新しい個別モデル指定
   # models:
-  #   article: 'meituan/longcat-flash-chat' # 記事作成用
-  #   rewrite: 'meituan/longcat-flash-chat' # リライト用
-  #   tags: 'meituan/longcat-flash-chat' # タグ生成用
+  #   article: 'z-ai/glm-4.5-air:free' # 記事作成用
+  #   rewrite: 'z-ai/glm-4.5-air:free' # リライト用
+  #   tags: 'z-ai/glm-4.5-air:free' # タグ生成用
     # ---------------------------------------------------------
   # フォールバックモデル設定（429エラー時）
   # fallback_models:
@@ -117,7 +123,8 @@ ai:
 
   # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   temperature: 0.7
-  max_tokens: 1200
+  # max_tokens: 1200
+  max_tokens: 3000
 note:
   login_method: 'email_password'
   cookie_secret_name: 'NOTE_COOKIE'
