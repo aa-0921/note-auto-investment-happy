@@ -1,0 +1,54 @@
+# .github/workflows/duplicate-article.yml
+# 日本語コメント: ウェルスコーチ案件記事の複製・投稿ワークフロー
+# 定期的に案件記事を複製して、タイトルに日付を追加して下書き保存します
+
+name: ウェルスコーチ記事複製
+
+on:
+  # 定期実行スケジュール
+  schedule:
+    # 毎日午前0時（日本時間午前9時）に実行
+    - cron: '0 0 * * *'
+  
+  # 手動実行も可能
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: '公開する（true/false）'
+        required: false
+        default: 'false'
+
+jobs:
+  duplicate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v3
+      
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 依存関係のインストール
+        run: npm ci
+      
+      - name: Chromiumのインストール
+        run: |
+          npx puppeteer browsers install chrome
+      
+      - name: ウェルスコーチ記事を複製
+        env:
+          NOTE_EMAIL: ${{ secrets.NOTE_EMAIL }}
+          NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
+        run: |
+          node scripts/duplicateArticle.js --bg
+      
+      - name: エラー時の通知
+        if: failure()
+        run: |
+          echo "❌ 記事の複製に失敗しました"
+          echo "ログを確認してください"
+
