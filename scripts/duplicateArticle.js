@@ -26,6 +26,7 @@ import { runWithCore } from '@aa-0921/note-auto-core';
         articleUrls: articleUrls
         // publish: true がデフォルト（即座に公開）
         // titleSuffix: undefined がデフォルト（日付を自動追加）
+        // サムネイル画像は各リポジトリの thumbnails ディレクトリから自動選択
       });
       
       console.log('');
