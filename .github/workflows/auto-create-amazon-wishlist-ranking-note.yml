@@ -39,3 +39,5 @@ jobs:
           NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
         run: node scripts/createAmazonWishlistRankingNote.js
 
+
+
