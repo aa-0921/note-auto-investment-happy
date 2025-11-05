@@ -1,6 +1,6 @@
 # .github/workflows/duplicate-article.yml
 # 日本語コメント: ウェルスコーチ案件記事の複製・投稿ワークフロー
-# 定期的に案件記事を複製して、タイトルに日付を追加して下書き保存します
+# 定期的に案件記事を複製して、タイトルに日付を追加して即座に公開します
 
 name: ウェルスコーチ記事複製
 
@@ -16,7 +16,7 @@ on:
       publish:
         description: '公開する（true/false）'
         required: false
-        default: 'false'
+        default: 'true'
 
 jobs:
   duplicate:
@@ -26,11 +26,27 @@ jobs:
       - name: チェックアウト
         uses: actions/checkout@v3
       
+      - name: note-auto-coreのチェックアウト
+        uses: actions/checkout@v3
+        with:
+          repository: aa-0921/note-auto-core
+          path: temp-note-auto-core
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: note-auto-coreを親ディレクトリに移動
+        run: |
+          mv temp-note-auto-core ../note-auto-core
+          ls -la ../
+      
       - name: Node.jsのセットアップ
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
+      
+      - name: note-auto-coreの依存関係をインストール
+        working-directory: ../note-auto-core
+        run: npm ci
       
       - name: 依存関係のインストール
         run: npm ci
