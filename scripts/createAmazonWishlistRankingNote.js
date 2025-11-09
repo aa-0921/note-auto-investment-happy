@@ -56,3 +56,4 @@ import { amazonWishlistRankingLinks } from './affiliateConfig.js';
     console.log('✅ Amazonほしい物ランキング記事を投稿しました');
   });
 })();
+
