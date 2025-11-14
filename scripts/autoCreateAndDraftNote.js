@@ -314,6 +314,15 @@ export { affiliateConfig, affiliateLinks };
     const amazonAssociateText =
       'Amazon のアソシエイトとして、「まずは100円から💹投資|運用|資産形成」は適格販売により収入を得ています。';
 
+    // おすすめ記事セクションの設定
+    const recommendedArticlesTitle = '他のおすすめ記事🉐';
+    const recommendedArticlesUrls = [
+      'https://note.com/investment_happy/n/n5c67b3b1e649',
+      'https://note.com/investment_happy/n/n8774ad58b529',
+      'https://note.com/investment_happy/n/nfa3e86e77e99',
+      'https://note.com/investment_happy/n/n078f5f169b29',
+    ];
+
     // 記事の自動生成と下書き保存機能を実行
     await core.runAutoCreateAndDraftNote({
       background: wantsBackground,
@@ -331,6 +340,9 @@ export { affiliateConfig, affiliateLinks };
       affiliateTag: affiliateConfig.affiliateTag,
       audibleAffiliateEnabled: affiliateConfig.audibleAffiliateEnabled,
       kindleAffiliateEnabled: affiliateConfig.kindleAffiliateEnabled,
+      // おすすめ記事セクション設定
+      recommendedArticlesTitle,
+      recommendedArticlesUrls,
     });
     console.log('記事の自動生成と下書き保存が完了しました');
   });
