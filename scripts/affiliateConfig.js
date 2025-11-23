@@ -5,12 +5,14 @@
 const affiliateTag = 'note-investment-management-22';
 const audibleAffiliateEnabled = true;
 const kindleAffiliateEnabled = true;
+const associateName = '🏅投資・資産運用サポート🏅';
 
 // アフィリエイト設定をエクスポート
 export const affiliateConfig = {
   affiliateTag,
   audibleAffiliateEnabled,
   kindleAffiliateEnabled,
+  associateName,
 };
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
