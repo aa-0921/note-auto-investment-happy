@@ -12,14 +12,14 @@ export const saleTweetMessages = [
   '💖 「買ってよかった」と思える物を、年末のうちにひとつ迎えておきませんか？✨',
   '👛 「安い時に買う」だけでOK。いつもの消耗品をセール中に軽くまとめ買い🛒',
   '🌟 一年がんばった自分に、小さなご褒美をひとつだけ足してみませんか？💫🎁',
-  '🎉 いよいよAmazonブラックフライデー（アフターセール）。本番セール、始まります🔥',
+  '🎉 いよいよAmazonブラックフライデーセール。本番セール、始まります🔥',
   '🎊 2025年最後のビッグチャンス。気になっていたあの商品を狙うなら今🎁',
-  '😅 「ブラックフライデー（アフターセール）だけは買っちゃう」その気持ち、今年も一緒です✨',
+  '😅 「ブラックフライデーだけは買っちゃう」その気持ち、今年も一緒です✨',
   '🎉 毎年この時期だけは我慢せずにポチっと。1年で一番ゆるくて楽しい買い物デー💰',
   '😊 普段は我慢してるけど、この週末だけは「欲しかった物」にOKを出してあげませんか？🔥',
   '😭 「また買っちゃった…」と言いつつ、毎年ちょっと楽しみにしているセールです💸',
   '💸 普段は節約モードでも、この時期だけは「まとめ買い解禁」にしてもいいかもしれません🎊',
-  '🤫 ブラックフライデー（アフターセール）の日だけは、買い物ルールをゆるめてもいいかなと思っています✨',
+  '🤫 ブラックフライデーの日だけは、買い物ルールをゆるめてもいいかなと思っています✨',
 ];
 
 // 差分用の短い文章（一般的なセール案内用のひと言）
@@ -66,8 +66,8 @@ const saleLinkBlackFridayMainUrl = `https://www.amazon.co.jp/blackfriday/2?_enco
 // const saleLink60PercentUrl = `https://www.amazon.co.jp/blackfriday?ref_=nav_cs_td_bf_dt_cr&discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522rangeRefinementFilters%255C%2522%253A%257B%255C%2522percentOff%255C%2522%253A%257B%255C%2522min%255C%2522%253A60%252C%255C%2522max%255C%2522%253A100%257D%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522&linkCode=ll2&tag=${affiliateTag}&linkId=0f9989f6daa8f074182cafb0dfc61121&language=ja_JP&ref_=as_li_ss_tl`;
 
 export const saleTweetAffiliateLinks = [
-  `💰 🎁 Amazonブラックフライデー（アフターセール）セール会場はこちら！\n${saleLinkBlackFridayMainUrl}`,
-  `🛍️ ✨ ブラックフライデー（アフターセール）セール会場へ\n${saleLinkBlackFridayMainUrl}`,
+  `💰 🎁 セール会場はこちら！\n${saleLinkBlackFridayMainUrl}`,
+  `🛍️ ✨ セール会場へ\n${saleLinkBlackFridayMainUrl}`,
   `🔥 今だけの特別価格！セール会場はこちら\n${saleLinkBlackFridayMainUrl}`,
   `💸 🎊 お得な商品が勢揃い！セール会場へ\n${saleLinkBlackFridayMainUrl}`,
   `🎉 年末のビッグセール開催中！会場はこちら\n${saleLinkBlackFridayMainUrl}`,
