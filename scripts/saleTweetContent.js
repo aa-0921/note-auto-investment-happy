@@ -45,8 +45,8 @@ export const saleTweetPrefixVariations = [
 
 // ハッシュタグ配列
 export const saleTweetHashtags = [
-  '#Amazonブラックフライデー（アフターセール）',
-  '#ブラックフライデー（アフターセール）セール',
+  '#Amazonブラックフライデー',
+  // '#ブラックフライデー（アフターセール）セール',
   // '#アマゾンセール',
   // '#ブラックフライデー（アフターセール）',
   // '#お得情報',
