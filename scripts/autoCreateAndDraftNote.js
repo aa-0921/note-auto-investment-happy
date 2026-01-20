@@ -323,11 +323,16 @@ export { affiliateConfig, affiliateLinks };
       'https://note.com/investment_happy/n/n078f5f169b29',
     ];
 
+    // 記事の最初と最後に追加するコメント募集テキスト
+    const commentRequestText =
+      'コメントいただけると大変励みになります💰✨ 記事で扱ってほしい題材やテーマも募集しております。ご意見やご感想など、どのような内容でもお待ちしておりますので、気軽にコメントいただけると嬉しいです📈';
+
     // 記事の自動生成と下書き保存機能を実行
     await core.runAutoCreateAndDraftNote({
       background: wantsBackground,
       topics,
       patterns,
+      commentRequestText,
       systemMessage,
       articleConditionsLines,
       rewriteConditionsLines,
