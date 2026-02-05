@@ -33,7 +33,7 @@ import { affiliateLinks, affiliateConfig } from './affiliateConfig.js';
       '',
       '※ Amazon のアソシエイトとして、「まずは100円から💹投資|運用|資産形成」は適格販売により収入を得ています。',
       '',
-      '#おすすめ商品 #買ってよかった #Amazon #投資 #資産運用 #金融 #生活 #PR',
+      '#おすすめ商品 #買ってよかった #アマゾン #Amazon #投資 #資産運用 #金融 #生活 #PR',
     ].join('\n');
 
     // コアライブラリのメソッドを呼び出し
